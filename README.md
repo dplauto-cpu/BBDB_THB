@@ -30,6 +30,11 @@ El modelo lógico incluye las siguientes entidades principales:
 - **Calificaciones** (`cod_calificacion`, ...) → para almacenar notas por proyecto
 - **Profesores** (`cod_profesor`, `nombre`, `rol`) → Ej: Fernando VII, Máster en Corrupción
 - **Pro_pro** (tabla puente entre profesores y promociones)
+- **Roles**`(cod_rol`, `descripcion`)
+- **Rol_profesor** (`cod_Rol_Profesor`, `cod_profesor`, `cod_rol`)
+- **Proyecto** (`cod_proyecto`, `descripcion`)
+- **Proyecto_Alumno** ( `cod_proyecto_alumno`, `cod_proyecto`, `cod_alumno`, `nota`)
+- **Pro_pro**  (`cod_Pro_pro`, `cod_profesor`, `cod_promocion`)
 
 Este diseño permite escalar horizontalmente: nuevos campus, nuevas promociones, nuevas verticales o modalidades sin redundancias.
 
