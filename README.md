@@ -23,17 +23,17 @@ El proyecto se ha desarrollado en equipos mixtos.
 
 El modelo lógico incluye las siguientes entidades principales:
 
-- **Alumnos** (`cod_alumno`, `nombre`, `email`) → Ej: Amadeo de Saboya, amasa@gmail.it
-- **Cursos** (`cod_curso`, `nombre`) → Ej: Data Science, Full Stack
-- **Campus** (`cod_campus`, `nombre`) → Ej: Madrid, Valencia
-- **Promociones** (`cod_promocion`, `cod_alumno`, `cod_curso`, `cod_campus`, `fecha`)
-- **Calificaciones** (`cod_calificacion`, ...) → para almacenar notas por proyecto
-- **Profesores** (`cod_profesor`, `nombre`, `rol`) → Ej: Fernando VII, Máster en Corrupción
-- **Pro_pro**  (`cod_Pro_pro`, `cod_profesor`, `cod_promocion`)
-- **Roles**`(cod_rol`, `descripcion`)
-- **Rol_profesor** (`cod_Rol_Profesor`, `cod_profesor`, `cod_rol`)
-- **Proyecto** (`cod_proyecto`, `descripcion`)
-- **Proyecto_Alumno** ( `cod_proyecto_alumno`, `cod_proyecto`, `cod_alumno`, `nota`)
+- **Alumnos** (`Cod_Alumno`, `Nombre`, `Email`) → Ej: Amadeo de Saboya, amasa@gmail.it
+- **Cursos** (`Cod_Curso`, `Nombre`) → Ej: Data Science, Full Stack
+- **Campus** (`Cod_Campus`, `Nombre`) → Ej: Madrid, Valencia
+- **Promociones** (`cod_Promocion`, `Cod_Alumno`, `Cod_Curso`, `Cod_Campus`, `Fecha`)
+- **Calificaciones** (`Cod_Calificacion`, ...) → para almacenar notas por proyecto
+- **Profesores** (`Cod_Profesor`, `Nombre``) → Ej: Fernando VII, Máster en Corrupción
+- **Pro_pro**  (`Cod_Pro_Pro`, `Cod_Profesor`, `Cod_Promocion`)
+- **Roles**`(Cod_Rol`, `Descripcion`)
+- **Rol_profesor** (`Cod_Rol_Profesor`, `Cod_Profesor`, `Cod_Rol`)
+- **Proyecto** (`Cod_Proyecto`, `Descripcion`)
+- **Proyecto_Alumno** ( `Cod_Proyecto_Alumno`, `Cod_Proyecto`, `Cod_Alumno`, `Nota`)
 
 
 Este diseño permite escalar horizontalmente: nuevos campus, nuevas promociones, nuevas verticales o modalidades sin redundancias.
