@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Este proyecto consiste en la creación de una base de datos relacional a partir una seri de archivos cvs con datos ficticios  de estudiantes y profesores de una escuela de bootcamps en Data Science y Full Stack. Los objetivos son aplicar todos los conceptos que incluyen la creación de una base de datos desde cero: normalización, modelo entidad-relación (E/R), modelo lógico e implementación en PostgreSQL, garantizando escalabilidad para futuros campus, promociones, modalidades, etc. y una plena funcionalidad de la misma.
+Este proyecto consiste en la creación de una base de datos relacional a partir una serie de archivos cvs con datos ficticios  de estudiantes y profesores de dos bootcamps en Data Science y Full Stack. Los objetivos son aplicar todos los conceptos que incluyen la creación de una base de datos desde cero: normalización, modelo entidad-relación (E/R), modelo lógico e implementación en PostgreSQL, que garantice escalabilidad para futuros campus, promociones, modalidades, etc. y una plena funcionalidad de la misma.
 
 El proyecto se ha desarrollado en equipos mixtos.
 
