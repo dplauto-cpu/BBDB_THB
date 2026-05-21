@@ -81,37 +81,33 @@ Ordena por cantidad finales suspendidos y nombre
 '''
 
 WITH iniciales_aprobados AS (
-  -- Alumnos que aprobaron TODOS los proyectos iniciales (asumiendo Cod_Proyecto 1,2,3)
   SELECT a.Cod_Alumno, a.Nombre
   FROM Alumnos a
-  JOIN Proyecto_Alumno pa ON a.Cod_Alumno = pa.Cod_Alumno
+  JOIN Proyectos_Alumnos pa ON a.Cod_Alumno = pa.Cod_Alumno
   WHERE pa.Cod_Proyecto IN (1, 2, 3)
     AND pa.Nota = TRUE
   GROUP BY a.Cod_Alumno, a.Nombre
   HAVING COUNT(DISTINCT pa.Cod_Proyecto) = 3
 ),
 finales_suspendidos AS (
-  -- Alumnos que suspendieron al menos un proyecto final (Cod_Proyecto 4 o 5)
   SELECT DISTINCT a.Cod_Alumno, a.Nombre, p.Descripcion AS proyecto_suspendido
   FROM Alumnos a
-  JOIN Proyecto_Alumno pa ON a.Cod_Alumno = pa.Cod_Alumno
-  JOIN Proyecto p ON pa.Cod_Proyecto = p.Cod_Proyecto
+  JOIN Proyectos_Alumnos pa ON a.Cod_Alumno = pa.Cod_Alumno
+  JOIN Proyectos p ON pa.Cod_Proyecto = p.Cod_Proyecto
   WHERE pa.Cod_Proyecto IN (4, 5)
     AND pa.Nota = FALSE
 )
 SELECT 
   ia.Nombre AS Alumno,
   fs.proyecto_suspendido,
-  -- Subconsulta para contar cuántos proyectos finales suspendió en total
   (SELECT COUNT(*) 
-   FROM Proyecto_Alumno pa2 
+   FROM Proyectos_Alumnos pa2 
    WHERE pa2.Cod_Alumno = ia.Cod_Alumno 
      AND pa2.Cod_Proyecto IN (4, 5) 
      AND pa2.Nota = FALSE) AS total_finales_suspendidos,
-  -- Subconsulta para ver si aprobó al menos un proyecto final
   CASE 
     WHEN EXISTS (SELECT 1 
-                 FROM Proyecto_Alumno pa3 
+                 FROM Proyectos_Alumnos pa3 
                  WHERE pa3.Cod_Alumno = ia.Cod_Alumno 
                    AND pa3.Cod_Proyecto IN (4, 5) 
                    AND pa3.Nota = TRUE) 
