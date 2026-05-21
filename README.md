@@ -27,11 +27,11 @@ El modelo lógico incluye las siguientes entidades principales:
 - **Campus** (`Cod_Campus`, `Nombre`) → Ej: Madrid, Valencia
 - **Promociones** (`cod_Promocion`, `Cod_Alumno`, `Cod_Curso`, `Cod_Campus`, `Fecha`)
 - **Profesores** (`Cod_Profesor`, `Nombre`) → Ej: Fernando VII, Máster en Corrupción
-- **Pro_pro**  (`Cod_Pro_Pro`, `Cod_Profesor`, `Cod_Promocion`)
-- **Roles**`(Cod_Rol`, `Descripcion`)
-- **Rol_profesor** (`Cod_Rol_Profesor`, `Cod_Profesor`, `Cod_Rol`)
-- **Proyecto** (`Cod_Proyecto`, `Descripcion`)
-- **Proyecto_Alumno** ( `Cod_Proyecto_Alumno`, `Cod_Proyecto`, `Cod_Alumno`, `Nota`)
+- **Pro_pro**  (`Cod_Pro_Pro`, `Cod_Profesor`, `Cod_Promocion`) → Profesor/promoción
+- **Roles**`(Cod_Rol`, `Descripcion`) → Tipo de docencia, TA, LI, etc.
+- **Rol_profesor** (`Cod_Rol_Profesor`, `Cod_Profesor`, `Cod_Rol`) → Docencia desepeñada/profesor
+- **Proyecto** (`Cod_Proyecto`, `Descripcion`) → Tipo de proyecto
+- **Proyecto_Alumno** ( `Cod_Proyecto_Alumno`, `Cod_Proyecto`, `Cod_Alumno`, `Nota`) → Calificaciones del alumno
 
 > 📌 *Ver diagrama completo en la carpeta **`docs/`***
 
