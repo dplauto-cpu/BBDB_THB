@@ -24,7 +24,7 @@ El modelo lógico incluye las siguientes entidades principales:
 - **Alumnos** (`Cod_Alumno`, `Nombre`, `Email`) → Ej: Amadeo de Saboya, amasa@gmail.it
 - **Cursos** (`Cod_Curso`, `Nombre`) → Ej: Data Science, Full Stack
 - **Campus** (`Cod_Campus`, `Nombre`) → Ej: Madrid, Valencia
-- **Promociones** (`cod_Promocion`, `Cod_Alumno`, `Cod_Curso`, `Cod_Campus`, `Fecha`)
+- **Promociones** (`cod_Promocion`, `Cod_Alumno`, `Cod_Curso`, `Cod_Campus`, `Fecha`) → Ej: Bilbao, 2024
 - **Profesores** (`Cod_Profesor`, `Nombre`) → Ej: Fernando VII, Máster en Corrupción
 - **Pro_pro**  (`Cod_Pro_Pro`, `Cod_Profesor`, `Cod_Promocion`) → Profesor/promoción
 - **Roles**`(Cod_Rol`, `Descripcion`) → Tipo de docencia, TA, LI, etc.
