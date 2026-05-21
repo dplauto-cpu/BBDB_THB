@@ -8,7 +8,7 @@ Filtro por nota aprobada
 '''
 SELECT DISTINCT a.Nombre, a.Email
 FROM Alumnos a
-JOIN Proyecto_Alumno pa ON a.Cod_Alumno = pa.Cod_Alumno
+JOIN Proyectos_Alumnos pa ON a.Cod_Alumno = pa.Cod_Alumno
 WHERE pa.Nota = TRUE
 ORDER BY a.Nombre;
 
@@ -19,24 +19,13 @@ JOIN de tres tablas
 Filtro por descripción de rol
 '''
 SELECT pr.Nombre AS Profesor, r.Descripcion AS Rol
-FROM Profesor pr
+FROM Profesores pr
 JOIN Rol_profesor rp ON pr.Cod_Profesor = rp.Cod_Profesor
 JOIN Roles r ON rp.Cod_Rol = r.Cod_Rol
 WHERE r.Descripcion = 'TA'
 ORDER BY pr.Nombre;
 
-'''
-Query3: Profesores que han impartido más de una promoción (con mayor carga docente)
 
-Función de agregación COUNT
-GROUP BY para agrupar registros
-HAVING para filtrar agregados
-'''
-SELECT pr.Nombre, COUNT(DISTINCT pp.Cod_Promocion) AS promociones_impartidas
-FROM Profesor pr
-JOIN Pro_pro pp ON pr.Cod_Profesor = pp.Cod_Profesor
-GROUP BY pr.Cod_Profesor, pr.Nombre
-HAVING COUNT(DISTINCT pp.Cod_Promocion) > 1;
 
 ''' CONSULTAS MÁS COMPLEJAS
 
@@ -49,13 +38,15 @@ Orden descendente por conteo
 '''
 SELECT a.Nombre, COUNT(pa.Cod_Proyecto) AS suspensos
 FROM Alumnos a
-JOIN Proyecto_Alumno pa ON a.Cod_Alumno = pa.Cod_Alumno
+JOIN Proyectos_Alumnos pa ON a.Cod_Alumno = pa.Cod_Alumno
 WHERE pa.Nota = FALSE
 GROUP BY a.Cod_Alumno, a.Nombre
 HAVING COUNT(pa.Cod_Proyecto) >= 1
 ORDER BY suspensos DESC;
 
 '''
+Falta REVISAR
+
 Query5: Promedio de proyectos aprobados por campus (rendimiento por ubicación)
 
 Subconsultas en FROM (tablas anidadas)
