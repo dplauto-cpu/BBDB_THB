@@ -27,7 +27,6 @@ El modelo lógico incluye las siguientes entidades principales:
 - **Cursos** (`Cod_Curso`, `Nombre`) → Ej: Data Science, Full Stack
 - **Campus** (`Cod_Campus`, `Nombre`) → Ej: Madrid, Valencia
 - **Promociones** (`cod_Promocion`, `Cod_Alumno`, `Cod_Curso`, `Cod_Campus`, `Fecha`)
-- **Calificaciones** (`Cod_Calificacion`, ...) → para almacenar notas por proyecto
 - **Profesores** (`Cod_Profesor`, `Nombre``) → Ej: Fernando VII, Máster en Corrupción
 - **Pro_pro**  (`Cod_Pro_Pro`, `Cod_Profesor`, `Cod_Promocion`)
 - **Roles**`(Cod_Rol`, `Descripcion`)
