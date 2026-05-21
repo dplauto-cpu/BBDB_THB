@@ -53,7 +53,7 @@ CREATE TABLE Rol_profesor (
 );
 
 -- Tabla de Proyecto
-CREATE TABLE Proyecto (
+CREATE TABLE Proyectos (
   Cod_Proyecto SERIAL PRIMARY KEY,
   Descripcion VARCHAR(50)
 );

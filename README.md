@@ -2,9 +2,8 @@
 
 ## Descripción del Proyecto
 
-Este proyecto consiste en la creación de una base de datos relacional a partir una seri de archivos cvs con datos ficticios  de estudiantes y profesores de una escuela de bootcamps en Data Science y Full Stack. Los objetivos son aplicar todos los conceptos que incluyen la creación de una base de datos desde cero: normalización, modelo entidad-relación (E/R), modelo lógico e implementación en PostgreSQL, garantizando escalabilidad para futuros campus, promociones, modalidades, etc. y una plena funcionalidad de la misma.
+Este proyecto, desarrollado en equipos mixtos, consiste en la creación de una base de datos relacional a partir de una serie de archivos cvs con datos ficticios  de estudiantes y profesores de dos bootcamps en Data Science y Full Stack. El objetivo es aplicar todos los conceptos que incluyen la creación de una base de datos desde cero: normalización, modelo entidad-relación (E/R), modelo lógico e implementación en PostgreSQL, que garantice escalabilidad para futuros campus, promociones, modalidades, etc. y una plena funcionalidad de la misma.
 
-El proyecto se ha desarrollado en equipos mixtos.
 
 ## Estructura del Repositorio
 ├── docs/  
@@ -22,20 +21,16 @@ El proyecto se ha desarrollado en equipos mixtos.
 
 El modelo lógico incluye las siguientes entidades principales:
 
-- **Alumnos** (`cod_alumno`, `nombre`, `email`) → Ej: Amadeo de Saboya, amasa@gmail.it
-- **Cursos** (`cod_curso`, `nombre`) → Ej: Data Science, Full Stack
-- **Campus** (`cod_campus`, `nombre`) → Ej: Madrid, Valencia
-- **Promociones** (`cod_promocion`, `cod_alumno`, `cod_curso`, `cod_campus`, `fecha`)
-- **Calificaciones** (`cod_calificacion`, ...) → para almacenar notas por proyecto
-- **Profesores** (`cod_profesor`, `nombre`, `rol`) → Ej: Fernando VII, Máster en Corrupción
-- **Pro_pro**  (`cod_Pro_pro`, `cod_profesor`, `cod_promocion`)
-- **Roles**`(cod_rol`, `descripcion`)
-- **Rol_profesor** (`cod_Rol_Profesor`, `cod_profesor`, `cod_rol`)
-- **Proyecto** (`cod_proyecto`, `descripcion`)
-- **Proyecto_Alumno** ( `cod_proyecto_alumno`, `cod_proyecto`, `cod_alumno`, `nota`)
-
-
-Este diseño permite escalar horizontalmente: nuevos campus, nuevas promociones, nuevas verticales o modalidades sin redundancias.
+- **Alumnos** (`Cod_Alumno`, `Nombre`, `Email`) → Ej: Amadeo de Saboya, amasa@gmail.it
+- **Cursos** (`Cod_Curso`, `Nombre`) → Ej: Data Science, Full Stack
+- **Campus** (`Cod_Campus`, `Nombre`) → Ej: Madrid, Valencia
+- **Promociones** (`cod_Promocion`, `Cod_Alumno`, `Cod_Curso`, `Cod_Campus`, `Fecha`)
+- **Profesores** (`Cod_Profesor`, `Nombre`) → Ej: Fernando VII, Máster en Corrupción
+- **Pro_pro**  (`Cod_Pro_Pro`, `Cod_Profesor`, `Cod_Promocion`) → Profesor/promoción
+- **Roles**`(Cod_Rol`, `Descripcion`) → Tipo de docencia, TA, LI, etc.
+- **Rol_profesor** (`Cod_Rol_Profesor`, `Cod_Profesor`, `Cod_Rol`) → Docencia desepeñada/profesor
+- **Proyecto** (`Cod_Proyecto`, `Descripcion`) → Tipo de proyecto
+- **Proyecto_Alumno** ( `Cod_Proyecto_Alumno`, `Cod_Proyecto`, `Cod_Alumno`, `Nota`) → Calificaciones del alumno
 
 > 📌 *Ver diagrama completo en la carpeta **`docs/`***
 
