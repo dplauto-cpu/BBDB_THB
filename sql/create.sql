@@ -1,68 +1,73 @@
--- Tabla de Alumnos
+-- 1. Tabla de Alumnos
 CREATE TABLE Alumnos (  
   Cod_Alumno SERIAL PRIMARY KEY,
   Nombre VARCHAR(100),
   Email VARCHAR(100)
 );
 
--- Tabla de Cursos
+-- 2. Tabla de Cursos
 CREATE TABLE Cursos (
   Cod_Curso SERIAL PRIMARY KEY,
   Nombre VARCHAR(100)
 );
 
--- Tabla de Campus
+-- 3. Tabla de Campus
 CREATE TABLE Campus (
   Cod_Campus SERIAL PRIMARY KEY,
   Nombre VARCHAR(100)
 );
 
--- Tabla de Promociones
+-- 4. Tabla de Promociones (Normalizada: representa solo los grupos de clase)
 CREATE TABLE Promociones (  
   Cod_Promocion SERIAL PRIMARY KEY,
-  Cod_Alumno INT,
   Cod_Curso INT,
   Cod_Campus INT,
   Fecha DATE
 );
 
--- Tabla de Profesor
+-- 5. Tabla de Alumno_Promocion (Relaciona a los alumnos con sus grupos)
+CREATE TABLE Alumno_Promocion (
+  Cod_Alumno INT,
+  Cod_Promocion INT,
+  PRIMARY KEY (Cod_Alumno, Cod_Promocion)
+);
+
+-- 6. Tabla de Profesor
 CREATE TABLE Profesor (
   Cod_Profesor SERIAL PRIMARY KEY,
   Nombre VARCHAR(100)
 );
 
--- Tabla de Pro_pro
+-- 7. Tabla de Pro_pro (Relaciona a los profesores con los grupos únicos)
 CREATE TABLE Pro_pro (
   Cod_Pro_Pro SERIAL PRIMARY KEY,
   Cod_Profesor INT,
   Cod_Promocion INT
 );
 
--- Tabla de Roles
+-- 8. Tabla de Roles
 CREATE TABLE Roles (
   Cod_Rol SERIAL PRIMARY KEY,
   Descripcion VARCHAR(50)
 );
 
--- Tabla de Rol_profesor
+-- 9. Tabla de Rol_profesor
 CREATE TABLE Rol_profesor (
   Cod_Rol_Profesor SERIAL PRIMARY KEY,
   Cod_Profesor INT,
   Cod_Rol INT
 );
 
--- Tabla de Proyecto
+-- 10. Tabla de Proyectos
 CREATE TABLE Proyectos (
   Cod_Proyecto SERIAL PRIMARY KEY,
   Descripcion VARCHAR(50)
 );
 
--- Tabla de Proyecto_Alumno
-CREATE TABLE Proyecto_Alumno (
+-- 11. Tabla de Proyectos_Alumno
+CREATE TABLE Proyectos_Alumnos (
   Cod_Proyecto_Alumno SERIAL PRIMARY KEY,
   Cod_Proyecto INT,
   Cod_Alumno INT,
   Nota BOOLEAN
 );
-
