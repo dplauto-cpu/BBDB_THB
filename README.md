@@ -26,15 +26,12 @@ El modelo lógico incluye las siguientes entidades principales:
 - **Cursos** (`Cod_Curso`, `Nombre`) → Ej: Data Science, Full Stack
 - **Campus** (`Cod_Campus`, `Nombre`) → Ej: Madrid, Valencia
 - **Promociones** (`cod_Promocion`, `Cod_Alumno`, `Cod_Curso`, `Cod_Campus`, `Fecha`)
-- **Profesores** (`Cod_Profesor`, `Nombre``) → Ej: Fernando VII, Máster en Corrupción
+- **Profesores** (`Cod_Profesor`, `Nombre`) → Ej: Fernando VII, Máster en Corrupción
 - **Pro_pro**  (`Cod_Pro_Pro`, `Cod_Profesor`, `Cod_Promocion`)
 - **Roles**`(Cod_Rol`, `Descripcion`)
 - **Rol_profesor** (`Cod_Rol_Profesor`, `Cod_Profesor`, `Cod_Rol`)
 - **Proyecto** (`Cod_Proyecto`, `Descripcion`)
 - **Proyecto_Alumno** ( `Cod_Proyecto_Alumno`, `Cod_Proyecto`, `Cod_Alumno`, `Nota`)
-
-
-Este diseño permite escalar horizontalmente: nuevos campus, nuevas promociones, nuevas verticales o modalidades sin redundancias.
 
 > 📌 *Ver diagrama completo en la carpeta **`docs/`***
 
