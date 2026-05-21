@@ -14,9 +14,8 @@ El proyecto se ha desarrollado en equipos mixtos.
 │   ├── create_tables.sql                # Script de creación de tablas  
 │   └── insert_data.sql                  # Script de ingesta de datos  
 ├── queries/  
-│   └── demo_queries.sql                 # Consultas de ejemplo  
-├── data/  
-│   └── raw_data.csv                     # Datos originales (anonimizados)  
+│   └── demo_queries.sql                 # Consultas de ejemplo    
+│     
 └── README.md  
 
 ## Modelo Lógico Propuesto
@@ -45,4 +44,4 @@ Este diseño permite escalar horizontalmente: nuevos campus, nuevas promociones,
 - **PostgreSQL** (motor de base de datos)
 - **Render** (despliegue gratuito de la BD)
 - **GitHub** (control de versiones y colaboración)
-- **Draw.io / Lucidchart** (diagramas E/R y lógico)
+- **Draw.io** (diagramas E/R y lógico)
